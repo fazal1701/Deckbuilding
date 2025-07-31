@@ -3,7 +3,7 @@ const materials = [
     title: "Trex Composite Decking",
     subtitle: "Premium Composite Collection",
     price: "$28-38/sq ft",
-    image: "/images/IpeHardwoodFlooring.jpg", // ✅ exact match
+    image: "/images/IpeHardwoodFlooring.jpg",
     description: "Industry-leading composite decking with superior durability and style",
     pros: [
       "25-year fade & stain warranty",
@@ -20,7 +20,7 @@ const materials = [
     title: "TimberTech Composite Decking",
     subtitle: "Advanced Composite Technology",
     price: "$25-35/sq ft",
-    image: "/images/Multi-level-entertainment-deck.jpg", // ✅ exact match
+    image: "/images/Multi-level-entertainment-deck.jpg",
     description: "High-performance composite with realistic wood grain textures",
     pros: [
       "30-year limited warranty",
@@ -37,7 +37,7 @@ const materials = [
     title: "Azek PVC Decking",
     subtitle: "100% Synthetic PVC",
     price: "$30-42/sq ft",
-    image: "/images/Rooftop-urban-retreat.jpg", // ✅ exact match
+    image: "/images/Rooftop-urban-retreat.jpg",
     description: "Premium PVC decking that won't rot, warp, or splinter",
     pros: [
       "Lifetime limited warranty",
@@ -54,7 +54,7 @@ const materials = [
     title: "Fiberon Composite Decking",
     subtitle: "Good Life Collection",
     price: "$22-32/sq ft",
-    image: "/images/cedarpooldeckparadise.jpg", // ✅ exact match
+    image: "/images/cedarpooldeckparadise.jpg",
     description: "Value-oriented composite with excellent performance",
     pros: [
       "25-year warranty",
@@ -71,7 +71,7 @@ const materials = [
     title: "Zuri PVC Decking",
     subtitle: "Premium PVC Collection",
     price: "$32-45/sq ft",
-    image: "/images/contemporycompositedeck.jpg", // ✅ fixed typo spelling
+    image: "/images/contemporycompositedeck.jpg",
     description: "Luxury PVC decking with authentic hardwood appearance",
     pros: [
       "25-year warranty",
@@ -88,7 +88,7 @@ const materials = [
     title: "Red Cedar Decking",
     subtitle: "Western Red Cedar",
     price: "$18-28/sq ft",
-    image: "/images/curvedcedardeck.jpg", // ✅ exact match
+    image: "/images/curvedcedardeck.jpg",
     description: "Beautiful natural wood with natural weather resistance",
     pros: [
       "Natural beauty & aroma",
@@ -105,7 +105,7 @@ const materials = [
     title: "Ipe Wood Decking",
     subtitle: "Brazilian Hardwood",
     price: "$38-55/sq ft",
-    image: "/images/pergolagardendeck.jpg", // ✅ exact match
+    image: "/images/pergolagardendeck.jpg",
     description: "Ultra-premium hardwood with exceptional durability",
     pros: [
       "50+ year lifespan",
@@ -118,4 +118,31 @@ const materials = [
     bestFor: "Premium installations requiring maximum durability",
     rating: 5,
   },
-]
+];
+
+export default function MaterialsPage() {
+  return (
+    <div className="materials-grid">
+      {materials.map((material) => (
+        <div className="material-card" key={material.title}>
+          <img
+            src={material.image}
+            alt={material.title}
+            style={{
+              width: "100%",
+              height: "180px",
+              objectFit: "cover",
+              borderRadius: "8px 8px 0 0",
+              marginBottom: "16px",
+            }}
+          />
+          <h3>{material.title}</h3>
+          <p>{material.subtitle}</p>
+          <p>{material.price}</p>
+          <p>{material.description}</p>
+          {/* You can expand here to include pros, cons, bestFor, etc. */}
+        </div>
+      ))}
+    </div>
+  );
+}
